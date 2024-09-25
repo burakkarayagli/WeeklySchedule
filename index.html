@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haftalık Ders Programı</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</head>
+<body>
+    <h1>Haftalık Ders Programı</h1>
+    <div id="errorMessage" style="color: red;"></div>
+    <input type="file" id="fileInput" accept=".xlsx, .xls">
+    <div class="container">
+        <div class="left-panel">
+            <input type="text" id="searchInput" placeholder="Ders ara...">
+            <select id="classSelect">
+                <option value="all">Tümü</option>
+                <option value="1">1. Sınıf</option>
+                <option value="2">2. Sınıf</option>
+                <option value="3">3. Sınıf</option>
+                <option value="4">4. Sınıf</option>
+            </select>
+            <div id="dersListesi"></div>
+        </div>
+        <div class="right-panel">
+            <table id="dersProgrami">
+                <tr>
+                    <th>Saat</th>
+                    <th>Pazartesi</th>
+                    <th>Salı</th>
+                    <th>Çarşamba</th>
+                    <th>Perşembe</th>
+                    <th>Cuma</th>
+                    <th>Cumartesi</th>
+                    <th>Pazar</th>
+                </tr>
+            </table>
+            <h3>Seçilen Dersler</h3>
+            <div id="secilenDersler"></div>
+        </div>
+    </div>
+
+    <script src="models.js"></script>
+    <script src="utils.js"></script>
+    <script src="dersManager.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

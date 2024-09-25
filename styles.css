@@ -1,0 +1,512 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.left-panel {
+    flex: 1;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.right-panel {
+    flex: 2;
+}
+
+#dersListesi {
+    margin-top: 10px;
+}
+
+.ders-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 2px;
+    border-radius: 4px;
+}
+
+.ders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.ders-kodu {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 0.9em;
+}
+
+.ders-adi {
+    flex-grow: 1;
+    font-size: 0.9em;
+}
+
+.ekle-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 2px 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.ders-detay {
+    padding: 5px 10px;
+    background-color: #f8f9fa;
+    font-size: 0.9em;
+}
+
+.alt-dersler {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.alt-ders-btn {
+    width: 15px;
+    height: 15px;
+    background-color: #e0e0e0;
+    /* Varsayılan gri renk */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.alt-ders-btn:hover {
+    opacity: 0.8;
+}
+
+.alt-ders-btn.active {
+    border: 2px solid #2c3e50;
+}
+
+/* Renk paleti için örnek renkler kaldırıldı */
+
+/* Diğer stiller aynı kalacak */
+
+#dersProgrami {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#dersProgrami th,
+#dersProgrami td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#dersProgrami th {
+    background-color: #f0f0f0;
+}
+
+#secilenDersler {
+    margin-top: 20px;
+}
+
+.secilen-ders {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+}
+
+#fileInput,
+#searchInput,
+#classSelect {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+h1,
+h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+#dersListesiContainer {
+    margin-top: 20px;
+}
+
+#dersListesi {
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+#dersListesi li {
+    cursor: pointer;
+    padding: 5px;
+    margin: 2px 0;
+    background-color: #f0f0f0;
+}
+
+#dersListesi li:hover {
+    background-color: #e0e0e0;
+}
+
+.ders-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ders-card h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.ders-card .ders-kodu {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.ders-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ders-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.ekle-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.ekle-btn:hover {
+    background-color: #27ae60;
+}
+
+.info-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.info-btn:hover {
+    background-color: #2980b9;
+}
+
+.alt-dersler {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.alt-ders-btn {
+    width: 20px;
+    height: 20px;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    padding: 0;
+    font-size: 10px;
+}
+
+.alt-ders-btn:hover {
+    background-color: #bdc3c7;
+}
+
+.alt-ders-btn.active {
+    background-color: #3498db;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.alt-ders-btn:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#fileInput,
+#searchInput,
+#classSelect {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#dersProgrami {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#dersProgrami th,
+#dersProgrami td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#dersProgrami th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+#secilenDersler {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+}
+
+.secilen-ders {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+}
+
+.sil-button {
+    margin-left: 5px;
+    cursor: pointer;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 70%;
+    max-width: 500px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.accordion-item {
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.ders-kodu {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.ders-adi {
+    flex-grow: 1;
+}
+
+.ekle-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.toggle-icon {
+    font-size: 12px;
+}
+
+.accordion-content {
+    padding: 15px;
+    background-color: white;
+}
+
+.ders-detay p {
+    margin: 5px 0;
+}
+
+.alt-dersler {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.alt-dersler button {
+    width: 20px;
+    height: 20px;
+    background-color: #ecf0f1;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    padding: 0;
+    font-size: 10px;
+}
+
+.alt-dersler button.active {
+    background-color: #3498db;
+}
+
+.alt-dersler button:hover {
+    background-color: #bdc3c7;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.alt-dersler button:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#secilenDersler p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6f3ff;
+    padding: 3px 5px;
+    margin: 1px 0;
+    font-size: 0.9em;
+}
+
+#secilenDersler button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 3px 6px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.ders-zamanlari {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    font-family: inherit;
+    padding-left: 10px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.gun-grubu {
+    margin-bottom: 5px;
+}
+
+.ders-gun {
+    margin-bottom: 5px;
+}
+
+.gun-adi {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.ders-detay {
+    display: inline-block;
+}
+
+.ders-detay pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    font-family: inherit;
+    padding-left: 10px;
+}
